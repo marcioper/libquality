@@ -1,0 +1,19 @@
+version: '2'
+volumes:
+  dbdata:
+
+services:
+ mysql:
+  image: mysql:5.6
+  container_name: libquality_mysql
+  volumes:
+    - dbdata:/var/lib/mysql
+  restart: always
+  environment:
+    - MYSQL_ROOT_PASSWORD=secret
+    - MYSQL_DATABASE=libquality
+    - MYSQL_USER=root
+    - MYSQL_PASSWORD=secret
+  ports:
+    - "33061:3306"
+  command: ['mysqld', '--character-set-server=utf8', '--collation-server=utf8_bin']
