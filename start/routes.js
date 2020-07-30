@@ -20,4 +20,11 @@ Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 });
 
-Route.get("/projects/sync", "ProjectController.indexSync").middleware("sync");
+/** Sync Github Route */
+Route.get("/api/v1/projects/sync", "ProjectController.indexSyncGitHub");
+
+/** Phase 1 / average statistics issues Route */
+Route.get("/api/v1/projects/average", "ProjectController.averages");
+
+/** Phase 2 / daily statistics issues Route */
+Route.get("/api/v1/projects/statistics", "ProjectController.statistics");
