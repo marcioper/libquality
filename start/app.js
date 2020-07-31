@@ -17,7 +17,8 @@ const providers = [
   '@adonisjs/cors/providers/CorsProvider',
   '@adonisjs/lucid/providers/LucidProvider',
   'adonis-scheduler/providers/SchedulerProvider',
-  'adonis-swagger/providers/SwaggerProvider'
+  'adonis-swagger/providers/SwaggerProvider',
+  '@adonisjs/vow/providers/VowProvider',
 ]
 
 /*
@@ -57,5 +58,12 @@ const aliases = { Scheduler: "Adonis/Addons/Scheduler" }
 |
 */
 const commands = []
+
+console.log = function (msg, ...options) {
+  const ignore = ".returning() is not supported by mysql and will not have any effect.";
+  if (msg && msg.indexOf(ignore) === -1) {
+    console.info(msg, ...options);
+  }
+}
 
 module.exports = { providers, aceProviders, aliases, commands }

@@ -11,7 +11,7 @@ const util = new GithubUtil();
 
 class CollectDataGitHub extends Task {
   static get schedule () {
-    return '0 */60 * * * *' // 1 Hour
+    return '0 */1 * * * *' // 10 minutes
   }
 
   async handle () {
@@ -22,7 +22,7 @@ class CollectDataGitHub extends Task {
       console.log("full_name", project.full_name);
 
       const arr = project.full_name.split("/");
-      const issues = await util.findIssuesSinceByProject(arr[0], arr[1], moment().format("YYYY-MM-DDTHH:MM"));
+      const issues = await util.findIssuesSinceByProject(arr[0], arr[1], moment().subtract(600000, "ms").format("YYYY-MM-DDTHH:MM"));
 
       console.log("length", issues.length);
       issues.forEach(async (issueGit, index) => {
