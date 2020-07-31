@@ -39,6 +39,9 @@ Open your operating system terminal and run the following commands:
   # Enter in directory
   cd libquality
 
+  # Install it globally via npm like so:
+  npm i -g @adonisjs/cli
+
   # Install the dependencies
   npm install
 ```
