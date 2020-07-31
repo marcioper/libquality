@@ -91,5 +91,10 @@ If desired, use another way to perform as requests, as available routes are:
 - **`GET /api/v1/projects/statistics`**: Daily Statistics Lib Issues.
 
 Or, case desired, you can use Swagger opening http://localhost:3333/docs in your browser, ayeey 🎉
+But before, execute the follow command below in root project
+```bash
+  # Export config file & swagger-ui assets
+  adonis swagger:export
+```
 
 Developed with 💜 by Marcio Pinto 🧑🏽‍🚀
