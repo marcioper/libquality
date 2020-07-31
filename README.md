@@ -37,7 +37,7 @@ Open your operating system terminal and run the following commands:
   git clone https://github.com/marcioper/libquality.git
 
   # Enter in directory
-  cd gobarber-api
+  cd libquality
 
   # Install the dependencies
   npm install
