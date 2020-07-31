@@ -2,7 +2,7 @@
 This is a simple service api to compare quality of differente open source libraries available in GitHub.
 
 ## 🏷️ ABOUT
-This tool collects data from GitHub, the first time the user chooses a repository he wants to store, after that the service API starts an automatic data collection on GitHub with a scheduled task that fetches new data every 10 minutes, collecting only new issues or updated issues.
+This tool collects data from GitHub, the first time the user chooses a repository he wants to store, after that the service API starts an automatic data collection on GitHub with a scheduled task that **fetches new data every 10 minutes, collecting only new issues or updated issues.**
 
 ## 📝 ARCHITECTURE
 <h1 align="center">
