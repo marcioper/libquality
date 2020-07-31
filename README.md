@@ -4,6 +4,14 @@ This is a simple service api to compare quality of differente open source librar
 ## 🏷️ ABOUT
 This tool collects data from GitHub, the first time the user chooses a repository he wants to store, after that the service API starts an automatic data collection on GitHub with a scheduled task that fetches new data every 10 minutes, collecting only new issues or updated issues.
 
+## 🏷️ ARCHITECTURE AND ER DIAGRAM
+<h1 align="center">
+  <img alt="Architeture" src="https://raw.githubusercontent.com/marcioper/libquality/master/LibQualityArchitectureAPI.png?token=AA6FHWISBK674HEUIWV3OS27EOL7C" />
+</h1>
+<h1 align="center">
+  <img alt="ER Diagram" src="https://raw.githubusercontent.com/marcioper/libquality/master/ER-libquality.png?token=AA6FHWOCE4FLOFAARABDESC7EOMDG" />
+</h1>
+
 ## 🚀 Technologies used
 The main technologies used to build this API were:
 
