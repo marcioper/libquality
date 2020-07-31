@@ -21,7 +21,7 @@ The main technologies used to build this API were:
 
 ## 📦 How to download and run?
 
-**Before downloading and running the project **, it is necessary to have ** Node.js ** already installed and then install the following tools:
+**Before downloading and running the project**, it is necessary to have **Node.js** already installed and then install the following tools:
 
 - [Git](https://git-scm.com/)
 - [Docker](https://www.docker.com/)
@@ -45,7 +45,7 @@ Open your operating system terminal and run the following commands:
 
 #### 🌐 Environment variables
 
-At the root of the project you can get the file `.env.example`. From there, create another file called `.env 'using the same structure.
+At the root of the project you can get the file `.env.example`. From there, create another file called `.env` using the same structure.
 
 ## DataBase
 Run command below to create mysql database

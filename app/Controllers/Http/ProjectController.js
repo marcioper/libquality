@@ -14,6 +14,30 @@ const state = 'open';
 
 class ProjectController {
 
+  /**
+  * @swagger
+  * /api/v1/projects/sync:
+  *   get:
+  *     tags:
+  *       - Project
+  *     summary: Sync Github Route
+  *     parameters:
+  *       - name: owner
+  *         description: Owner name of repositorie project
+  *         in: query
+  *         required: true
+  *         type: string
+  *       - name: repo
+  *         description: Name of repositorie project
+  *         in: query
+  *         required: true
+  *         type: string
+  *     responses:
+  *       200:
+  *         description: Collect data from github
+  *         example:
+  *           message: "The repository facebook/react was successfully synchronized"
+  */
   async indexSyncGitHub({ request, response }) {
     const { owner, repo } = request.only(["owner", "repo"]);
     const projectDto = await Project.findBy('full_name', `${owner}/${repo}`);
@@ -122,6 +146,32 @@ class ProjectController {
     }
   }
 
+  /**
+  * @swagger
+  * /api/v1/projects/average:
+  *   get:
+  *     tags:
+  *       - Project
+  *     summary: Average statistics issues
+  *     responses:
+  *       200:
+  *         description: Send summary data
+  *         example:
+  *           [
+  *             {
+  *               "full_name": "facebook/react",
+  *               "qnt": 567,
+  *               "avgage": 522,
+  *               "stdage": 515
+  *             },
+  *             {
+  *               "full_name": "vuejs/vue",
+  *               "qnt": 532,
+  *               "avgage": 478,
+  *               "stdage": 307
+  *             }
+  *           ]
+  */
   async averages({ request, response }) {
     // -- REST API 01
     try {
@@ -144,6 +194,51 @@ class ProjectController {
     }
   }
 
+  /**
+  * @swagger
+  * /api/v1/projects/statistics:
+  *   get:
+  *     tags:
+  *       - Project
+  *     summary: Daily statistics issues
+  *     parameters:
+  *       - name: dateParam
+  *         description: Optional start date to query YYYY-MM-DD
+  *         in: query
+  *         required: false
+  *         type: string
+  *       - name: intervalDays
+  *         description: Optional quantity about interval days
+  *         in: query
+  *         required: false
+  *         type: string
+  *     responses:
+  *       200:
+  *         description: Result
+  *         example:
+  *               [
+  *                 {
+  *                   "full_name": "facebook/react",
+  *                   "QTN": 8,
+  *                   "data_create": "2020-07-30"
+  *                 },
+  *                 {
+  *                   "full_name": "vuejs/vue",
+  *                   "QTN": 1,
+  *                   "data_create": "2020-07-30"
+  *                 },
+  *                 {
+  *                   "full_name": "facebook/react",
+  *                   "QTN": 1,
+  *                   "data_create": "2020-07-29"
+  *                 },
+  *                 {
+  *                   "full_name": "facebook/react",
+  *                   "QTN": 4,
+  *                   "data_create": "2020-07-28"
+  *                 }
+  *               ]
+  */
   async statistics({ request, response }) {
     // -- REST API 02
     try {
