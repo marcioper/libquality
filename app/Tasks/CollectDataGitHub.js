@@ -11,7 +11,7 @@ const util = new GithubUtil();
 
 class CollectDataGitHub extends Task {
   static get schedule () {
-    return '0 */1 * * * *' // 10 minutes
+    return '0 */10 * * * *' // 10 minutes
   }
 
   async handle () {
