@@ -28,7 +28,7 @@ The main technologies used to build this API were:
 - [Git](https://git-scm.com/)
 - [Docker](https://www.docker.com/)
 
-### ⬇️ Baixando o projeto
+### ⬇️ Downloading the project
 
 Open your operating system terminal and run the following commands:
 
