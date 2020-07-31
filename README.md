@@ -41,25 +41,35 @@ At the root of the project you can get the file `.env.example`. From there, crea
 
 ## DataBase
 Run command below to create mysql database
+```bash
   docker-compose up -d
+```
 
 For more information, check the `config/database.js` file.
 
 ## Run migrations
 Run command below to create tables in mysql database
+```bash
   adonis migration:run
+```
 
 ## Run server localhost:3333
 Run command below to execute server
+```bash
   adonis serve --dev
+```
 
 ## Run schedule task
 Run command below to start schedule task to collect data automatic from GitHub
+```bash
   adonis run:scheduler
+```
 
 ## Run tests
 Run command below to test service api
+```bash
   adonis test
+```
 
 ## 📌 Routes from API
 To test the routes, you can use the [Insomnia](https://insomnia.rest/). The whole **_workspace_** this API is available for use, just download the file **Insomnia_LibQuality.json** in project root.
